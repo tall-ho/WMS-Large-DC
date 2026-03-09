@@ -17,7 +17,7 @@ export default function DraggableModal({ isOpen, onClose, children, title, width
   if (!isOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 " onClick={onClose}>
       <motion.div
         drag
         dragControls={controls}
@@ -30,7 +30,7 @@ export default function DraggableModal({ isOpen, onClose, children, title, width
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.2 }}
-        className={`bg-[#F9F8F4] w-full ${width} max-h-[90vh] rounded-2xl shadow-2xl border-t-[6px] border-[#D4AF37] flex flex-col overflow-hidden relative`}
+        className={`bg-white w-full ${width} max-h-[90vh] rounded-2xl shadow-2xl border-t-[6px] border-[#D4AF37] flex flex-col overflow-hidden relative`}
         style={{ cursor: isDragging ? 'grabbing' : 'auto' }}
       >
         {/* Drag Handle / Header */}

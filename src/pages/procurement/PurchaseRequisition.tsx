@@ -244,9 +244,9 @@ export default function PurchaseRequisitionPage() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
-      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-[#F9F8F4]/50 backdrop-blur-sm">
+      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-transparent">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#8C6F36] text-white shadow-lg flex-shrink-0 border border-white/20">
             <ShoppingCart size={28} />
@@ -285,13 +285,13 @@ export default function PurchaseRequisitionPage() {
           </div>
 
           {/* Content Area */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
+          <div className="bg-white/80  rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
             
             {/* Toolbar (Log Tab Only) */}
             {activeTab === 'log' && (
-              <div className="px-6 py-3 border-b border-gray-100/50 flex flex-col xl:flex-row items-center justify-between gap-3 bg-white/40 backdrop-blur-sm">
+              <div className="px-6 py-3 border-b border-gray-100/50 flex flex-col xl:flex-row items-center justify-between gap-3 bg-white/40 ">
                 <div className="flex flex-1 items-center gap-3 w-full xl:w-auto overflow-x-auto no-scrollbar">
-                  <div className="flex items-center gap-1 p-1 bg-gray-100/60 rounded-lg border border-white/50 backdrop-blur-sm shrink-0">
+                  <div className="flex items-center gap-1 p-1 bg-gray-100/60 rounded-lg border border-white/50  shrink-0">
                     {['All', 'Pending Verify', 'Pending Approve', 'Revise', 'Approved', 'Rejected', 'Cancelled'].map(status => (
                       <button 
                         key={status} 
@@ -309,7 +309,7 @@ export default function PurchaseRequisitionPage() {
                       value={searchQuery} 
                       onChange={e => setSearchQuery(e.target.value)} 
                       placeholder="Search PR..." 
-                      className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60 backdrop-blur-sm transition-colors font-mono" 
+                      className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60  transition-colors font-mono" 
                     />
                   </div>
                 </div>
@@ -418,7 +418,7 @@ export default function PurchaseRequisitionPage() {
             {activeTab === 'log' && (
               <div className="flex-1 overflow-auto custom-scrollbar">
                 <table className="w-full text-left whitespace-nowrap">
-                  <thead className="sticky top-0 z-10 bg-gray-50/90 backdrop-blur-sm">
+                  <thead className="sticky top-0 z-10 bg-gray-50/90 ">
                     <tr>
                       <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-gray-100">PR ID</th>
                       <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-gray-100">Date</th>
@@ -498,7 +498,7 @@ export default function PurchaseRequisitionPage() {
           <button onClick={() => setShowModal(false)} className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-slate-900 transition-all"><X size={20} /></button>
         </div>
 
-        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-[#F9F8F4] font-sans">
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-transparent font-sans">
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-white relative mb-6">
             <h4 className="text-xs font-bold text-slate-900/70 uppercase mb-4 tracking-widest border-b border-[#D4AF37]/20 pb-2">General Information</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

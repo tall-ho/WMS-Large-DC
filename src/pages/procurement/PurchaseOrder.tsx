@@ -164,9 +164,9 @@ export default function PurchaseOrderPage() {
   const getBoardItems = (status: string) => poList.filter(p => p.status === status);
 
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
-      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-[#F9F8F4]/50 backdrop-blur-sm">
+      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-transparent">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#0F172A] to-[#1F1E1B] text-white shadow-lg flex-shrink-0 border border-white/20">
             <ShoppingBag size={28} />
@@ -410,7 +410,7 @@ export default function PurchaseOrderPage() {
 
           {/* PO List View */}
           {activeTab === 'list' && (
-            <div className="bg-white/80 backdrop-blur-xl rounded-none shadow-soft border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
+            <div className="bg-white/80  rounded-none shadow-soft border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
               <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-white/40">
                 <div className="relative w-64">
                   <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -472,7 +472,7 @@ export default function PurchaseOrderPage() {
           <button onClick={() => setShowModal(false)}><X size={24} className="text-gray-400 hover:text-slate-900" /></button>
         </div>
         
-        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-[#F9F8F4] font-sans">
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-transparent font-sans">
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 mb-6">
             <h4 className="text-xs font-bold text-slate-900 uppercase mb-4 border-b pb-2">Vendor Information</h4>
             <div className="grid grid-cols-2 gap-4 mb-4">

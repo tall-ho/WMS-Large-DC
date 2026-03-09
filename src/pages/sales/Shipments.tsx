@@ -198,9 +198,9 @@ export default function Shipments() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
-      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-[#F9F8F4]/50 backdrop-blur-sm">
+      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-transparent">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#8C6F36] text-white shadow-lg flex-shrink-0 border border-white/20">
             <Truck size={28} />
@@ -246,7 +246,7 @@ export default function Shipments() {
             
             {/* Toolbar (Only for Log Tab) */}
             {activeTab === 'log' && (
-              <div className="px-6 py-4 border-b border-gray-100/50 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4 bg-white/40 backdrop-blur-sm rounded-t-2xl border-t border-x border-white/60">
+              <div className="px-6 py-4 border-b border-gray-100/50 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4 bg-white/40  rounded-t-2xl border-t border-x border-white/60">
                 <div className="flex flex-col md:flex-row items-center gap-4 w-full lg:flex-1 lg:min-w-0 mr-auto flex-wrap">
                   <div className="relative w-full md:w-64 flex-shrink-0">
                     <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -255,7 +255,7 @@ export default function Shipments() {
                       value={searchQuery} 
                       onChange={(e) => setSearchQuery(e.target.value)} 
                       placeholder="Search SO / Customer / Driver..." 
-                      className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60 backdrop-blur-sm transition-colors font-mono" 
+                      className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60  transition-colors font-mono" 
                     />
                   </div>
                   <div className="flex items-center gap-2">
@@ -289,7 +289,7 @@ export default function Shipments() {
             {activeTab === 'log' && (
               <div className="flex-1 overflow-auto custom-scrollbar">
                 <table className="w-full text-left whitespace-nowrap">
-                  <thead className="sticky top-0 z-10 bg-gray-50/90 backdrop-blur-sm">
+                  <thead className="sticky top-0 z-10 bg-gray-50/90 ">
                     <tr>
                       <SortableTh label="Shipment ID" sortKey="id" currentSort={sortConfig} onSort={handleSort} />
                       <SortableTh label="SO Number" sortKey="soNumber" currentSort={sortConfig} onSort={handleSort} />
@@ -426,7 +426,7 @@ export default function Shipments() {
 
             {/* Pagination (Log Tab Only) */}
             {activeTab === 'log' && (
-              <div className="px-6 py-4 border-t border-gray-100/50 flex justify-between items-center bg-white/40 backdrop-blur-sm shrink-0">
+              <div className="px-6 py-4 border-t border-gray-100/50 flex justify-between items-center bg-white/40  shrink-0">
                 <div className="text-xs text-slate-500 font-bold font-mono">
                   Showing {paginatedShipments.length} of {filteredShipments.length} entries
                 </div>
@@ -439,7 +439,7 @@ export default function Shipments() {
 
       {/* New Shipment Modal */}
       {showNewShipmentModal && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex justify-center items-center p-4" onClick={() => setShowNewShipmentModal(false)}>
+        <div className="fixed inset-0 bg-slate-900/60  z-50 flex justify-center items-center p-4" onClick={() => setShowNewShipmentModal(false)}>
           <div className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
             <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
               <h3 className="text-lg font-bold text-slate-900 uppercase tracking-tight">Create New Shipment</h3>
@@ -463,7 +463,7 @@ export default function Shipments() {
 
       {/* Delivery Record Modal */}
       {showDeliveryRecordModal && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex justify-center items-center p-4" onClick={() => setShowDeliveryRecordModal(false)}>
+        <div className="fixed inset-0 bg-slate-900/60  z-50 flex justify-center items-center p-4" onClick={() => setShowDeliveryRecordModal(false)}>
           <div className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
             <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
               <h3 className="text-lg font-bold text-slate-900 uppercase tracking-tight">Record Trip Expense</h3>

@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 // --- SHARED COMPONENTS ---
 const KpiCard = ({ title, val, color, icon: Icon }: { title: string, val: string | number, color: string, icon: any }) => (
-    <div className="bg-white/60 backdrop-blur-xl rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 border border-white/60 relative overflow-hidden group h-full cursor-pointer">
+    <div className="bg-white/60  rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 border border-white/60 relative overflow-hidden group h-full cursor-pointer">
         <div className="absolute -right-6 -bottom-6 opacity-[0.05] transform rotate-12 group-hover:scale-110 transition-transform duration-700 pointer-events-none z-0" style={{color: color}}>
             <Icon size={110} />
         </div>
@@ -19,7 +19,7 @@ const KpiCard = ({ title, val, color, icon: Icon }: { title: string, val: string
                     <h4 className="text-2xl font-extrabold tracking-tight font-mono leading-tight truncate" style={{color: color}}>{val}</h4>
                 </div>
             </div>
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm backdrop-blur-md border border-white/60" style={{backgroundColor: color + '22'}}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm  border border-white/60" style={{backgroundColor: color + '22'}}>
                 <Icon size={20} color={color} />
             </div>
         </div>
@@ -130,7 +130,7 @@ export default function Customers() {
     };
 
     return (
-        <div className="flex flex-col h-full w-full overflow-hidden bg-[#F9F8F4]">
+        <div className="flex flex-col h-full w-full overflow-hidden bg-transparent">
             {/* Header */}
             <div className="px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 flex-shrink-0 z-10 border-b border-gray-100">
                 <div className="flex items-center gap-4 w-full md:w-auto">
@@ -260,8 +260,8 @@ export default function Customers() {
 
                 {/* Customer Modal */}
                 {showModal && (
-                    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex justify-center items-center p-4" onClick={closeModal}>
-                        <div className="bg-[#F9F8F4] w-full max-w-[1100px] max-h-[90vh] rounded-2xl shadow-2xl border-t-[6px] border-[#D4AF37] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
+                    <div className="fixed inset-0 bg-slate-900/60  z-50 flex justify-center items-center p-4" onClick={closeModal}>
+                        <div className="bg-white w-full max-w-[1100px] max-h-[90vh] rounded-2xl shadow-2xl border-t-[6px] border-[#D4AF37] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
                             <div className="p-6 bg-white border-b border-gray-100 flex justify-between items-center shrink-0">
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-slate-900 flex items-center justify-center rounded-xl shadow-lg text-[#D4AF37]">
@@ -284,7 +284,7 @@ export default function Customers() {
                                          </button>
                                      ))}
                                  </div>
-                                 <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-[#F9F8F4] font-sans">
+                                 <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-white font-sans">
                                       <div className="max-w-2xl mx-auto space-y-6">
                                           {/* General Tab */}
                                           <div style={{ display: activeFormTab === 'general' ? 'block' : 'none' }} className="bg-white p-6 border border-gray-100 rounded-2xl shadow-sm space-y-5">

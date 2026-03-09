@@ -240,9 +240,9 @@ export default function MasterCodePage() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
-      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-[#F9F8F4]/50 backdrop-blur-sm">
+      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-transparent">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#8C6F36] text-white shadow-lg flex-shrink-0 border border-white/20">
             <QrCode size={28} />
@@ -286,13 +286,13 @@ export default function MasterCodePage() {
           </div>
 
           {/* Content Area */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
+          <div className="bg-white/80  rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
             
             {/* Toolbar */}
             {activeTab === 'list' && (
-              <div className="px-6 py-3 border-b border-gray-100/50 flex flex-col lg:flex-row items-center justify-between gap-3 bg-white/40 backdrop-blur-sm">
+              <div className="px-6 py-3 border-b border-gray-100/50 flex flex-col lg:flex-row items-center justify-between gap-3 bg-white/40 ">
                 <div className="flex flex-1 items-center gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar">
-                  <div className="flex items-center gap-1 p-1 bg-gray-100/60 rounded-lg border border-white/50 backdrop-blur-sm shrink-0">
+                  <div className="flex items-center gap-1 p-1 bg-gray-100/60 rounded-lg border border-white/50  shrink-0">
                     {groups.map(g => (
                       <button key={g} onClick={() => { setActiveGroup(g); setCurrentPage(1); }} 
                         className={`flex items-center gap-1.5 capitalize font-mono px-2.5 py-1.5 text-xs rounded-md transition-all ${activeGroup === g ? 'bg-slate-500 text-white shadow-sm' : 'text-slate-500 hover:bg-white'}`}>
@@ -308,7 +308,7 @@ export default function MasterCodePage() {
 
                   <div className="relative w-full lg:w-64 shrink-0">
                     <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                    <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search Code / Name..." className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60 backdrop-blur-sm transition-colors font-mono" />
+                    <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search Code / Name..." className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60  transition-colors font-mono" />
                   </div>
                 </div>
                 <div className="flex gap-3 shrink-0 flex-nowrap items-center ml-auto">
@@ -327,7 +327,7 @@ export default function MasterCodePage() {
             {activeTab === 'list' && (
               <div className="flex-1 overflow-auto custom-scrollbar">
                 <table className="w-full text-left whitespace-nowrap">
-                  <thead className="sticky top-0 z-10 bg-gray-50/90 backdrop-blur-sm">
+                  <thead className="sticky top-0 z-10 bg-gray-50/90 ">
                     <tr>
                       <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-gray-100 cursor-pointer" onClick={() => handleSort('mastCode')}>Master Code</th>
                       <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-gray-100">Group</th>
@@ -377,7 +377,7 @@ export default function MasterCodePage() {
             {activeTab === 'analytics' && (
               <div className="flex-1 overflow-y-auto custom-scrollbar p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
-                  <div className="bg-white/70 backdrop-blur-xl p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
+                  <div className="bg-white/70  p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
                     <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Item Distribution by Type</h3>
                     <div className="flex-grow relative flex items-center justify-center">
                       <Doughnut 
@@ -393,7 +393,7 @@ export default function MasterCodePage() {
                       />
                     </div>
                   </div>
-                  <div className="bg-white/70 backdrop-blur-xl p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
+                  <div className="bg-white/70  p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
                     <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Top 10 High Value Materials</h3>
                     <div className="flex-grow relative flex items-center justify-center">
                       <Bar 
@@ -416,7 +416,7 @@ export default function MasterCodePage() {
 
             {/* Pagination */}
             {activeTab === 'list' && (
-              <div className="px-6 py-4 border-t border-gray-100/50 flex flex-col md:flex-row justify-between items-center gap-4 bg-white/40 backdrop-blur-sm shrink-0">
+              <div className="px-6 py-4 border-t border-gray-100/50 flex flex-col md:flex-row justify-between items-center gap-4 bg-white/40  shrink-0">
                 <div className="flex items-center gap-2 text-xs text-slate-500 font-bold font-mono">
                   <span>Show</span>
                   <select value={itemsPerPage} onChange={(e) => setItemsPerPage(Number(e.target.value))} className="bg-white/80 border border-gray-200/60 rounded-md px-2 py-1 focus:outline-none focus:border-[#D4AF37] cursor-pointer">
@@ -452,7 +452,7 @@ export default function MasterCodePage() {
           <button onClick={() => setShowModal(false)} className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-slate-900 transition-all"><X size={20} /></button>
         </div>
         
-        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-[#F9F8F4] font-sans space-y-6">
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-transparent font-sans space-y-6">
           {/* Groups */}
           <div>
             <label className="block text-xs font-bold text-slate-900 mb-2 uppercase tracking-widest font-mono">Group Type <span className="text-red-500">*</span></label>
@@ -547,7 +547,7 @@ export default function MasterCodePage() {
           <h3 className="font-bold text-slate-900">Manage Groups</h3>
           <button onClick={() => setShowGroupModal(false)}><X size={18} /></button>
         </div>
-        <div className="p-4 bg-[#F9F8F4] space-y-3">
+        <div className="p-4 bg-transparent space-y-3">
           <div className="flex gap-2">
             {editingGroup ? (
               <>

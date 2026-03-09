@@ -286,9 +286,9 @@ export default function SalesOrders() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
-      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-[#F9F8F4]/50 backdrop-blur-sm">
+      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-transparent">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#8C6F36] text-white shadow-lg flex-shrink-0 border border-white/20">
             <ShoppingBag size={28} />
@@ -330,13 +330,13 @@ export default function SalesOrders() {
           </div>
 
           {/* Content Area */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px]">
+          <div className="bg-white/80  rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px]">
             
             {/* Toolbar */}
             {activeTab === 'list' && (
-              <div className="px-6 py-4 border-b border-gray-100/50 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4 bg-white/40 backdrop-blur-sm">
+              <div className="px-6 py-4 border-b border-gray-100/50 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4 bg-white/40 ">
                 <div className="flex flex-col md:flex-row items-center gap-4 w-full lg:flex-1 lg:min-w-0 mr-auto flex-wrap">
-                  <div className="flex items-center gap-1 overflow-x-auto no-scrollbar w-full md:w-fit p-1 bg-gray-100/60 rounded-xl border border-white/50 backdrop-blur-sm shrink-0">
+                  <div className="flex items-center gap-1 overflow-x-auto no-scrollbar w-full md:w-fit p-1 bg-gray-100/60 rounded-xl border border-white/50  shrink-0">
                     {DISPLAY_STATUSES.map(status => (
                       <button 
                         key={status} 
@@ -357,7 +357,7 @@ export default function SalesOrders() {
                       value={searchQuery} 
                       onChange={(e) => setSearchQuery(e.target.value)} 
                       placeholder="Search SO No. / Customer..." 
-                      className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60 backdrop-blur-sm transition-colors font-mono" 
+                      className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60  transition-colors font-mono" 
                     />
                   </div>
                 </div>
@@ -378,7 +378,7 @@ export default function SalesOrders() {
             {activeTab === 'list' && (
               <div className="flex-1 overflow-auto custom-scrollbar">
                 <table className="w-full text-left whitespace-nowrap">
-                  <thead className="sticky top-0 z-10 bg-gray-50/90 backdrop-blur-sm">
+                  <thead className="sticky top-0 z-10 bg-gray-50/90 ">
                     <tr>
                       <th className="px-4 py-3 text-xs font-bold text-slate-900 uppercase tracking-wider border-b-2 border-[#D4AF37] font-mono">SO Number</th>
                       <th className="px-4 py-3 text-xs font-bold text-slate-900 uppercase tracking-wider border-b-2 border-[#D4AF37] font-mono">Date</th>
@@ -457,7 +457,7 @@ export default function SalesOrders() {
                     { id: 'Delivered', title: 'ส่งมอบแล้ว (Delivered)', color: 'bg-[#AABAAB]' },
                     { id: 'Returned', title: 'เคลม/ส่งคืน (Returned)', color: 'bg-red-500' },
                   ].map(col => (
-                    <div key={col.id} className="w-72 flex-shrink-0 flex flex-col h-full bg-white/40 backdrop-blur-sm rounded-xl p-3 border border-white shadow-sm">
+                    <div key={col.id} className="w-72 flex-shrink-0 flex flex-col h-full bg-white/40  rounded-xl p-3 border border-white shadow-sm">
                       <div className="flex justify-between items-center mb-3 px-1">
                         <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2">
                           <div className={`w-2 h-2 rounded-full ${col.color}`}></div> {col.title}
@@ -516,7 +516,7 @@ export default function SalesOrders() {
             {activeTab === 'analytics' && (
               <div className="flex-1 overflow-y-auto custom-scrollbar p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
-                  <div className="bg-white/70 backdrop-blur-xl p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
+                  <div className="bg-white/70  p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
                     <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Sales Trend (Monthly)</h3>
                     <div className="flex-grow relative">
                       <ResponsiveContainer width="100%" height="100%">
@@ -540,7 +540,7 @@ export default function SalesOrders() {
                       </ResponsiveContainer>
                     </div>
                   </div>
-                  <div className="bg-white/70 backdrop-blur-xl p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
+                  <div className="bg-white/70  p-6 rounded-none border border-white/60 shadow-sm h-96 flex flex-col">
                     <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Top Customers</h3>
                     <div className="flex-grow relative">
                       <ResponsiveContainer width="100%" height="100%">
@@ -565,7 +565,7 @@ export default function SalesOrders() {
 
             {/* Pagination */}
             {activeTab === 'list' && (
-              <div className="px-6 py-4 border-t border-gray-100/50 flex flex-col md:flex-row justify-between items-center gap-4 bg-white/40 backdrop-blur-sm shrink-0">
+              <div className="px-6 py-4 border-t border-gray-100/50 flex flex-col md:flex-row justify-between items-center gap-4 bg-white/40  shrink-0">
                 <div className="flex items-center gap-2 text-xs text-slate-500 font-bold font-mono">
                   <span>Show</span>
                   <select value={itemsPerPage} onChange={(e) => {setItemsPerPage(Number(e.target.value)); setCurrentPage(1);}} className="bg-white/80 border border-gray-200/60 rounded-md px-2 py-1 focus:outline-none focus:border-[#D4AF37] cursor-pointer">
@@ -586,8 +586,8 @@ export default function SalesOrders() {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex justify-center items-center p-4" onClick={() => setShowModal(false)}>
-          <div className="bg-[#F9F8F4] w-full max-w-5xl max-h-[90vh] rounded-2xl shadow-2xl border-t-[6px] border-[#D4AF37] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 bg-slate-900/60  z-50 flex justify-center items-center p-4" onClick={() => setShowModal(false)}>
+          <div className="bg-white w-full max-w-5xl max-h-[90vh] rounded-2xl shadow-2xl border-t-[6px] border-[#D4AF37] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
             <div className="p-6 bg-white border-b border-gray-100 flex justify-between items-center shrink-0">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-slate-900 flex items-center justify-center rounded-xl shadow-lg text-[#D4AF37]">
@@ -610,7 +610,7 @@ export default function SalesOrders() {
               <button onClick={() => setShowModal(false)} className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-slate-900 transition-all"><X size={20} /></button>
             </div>
 
-            <div className="flex-1 flex overflow-hidden bg-[#F9F8F4]">
+            <div className="flex-1 flex overflow-hidden bg-white">
               {/* Sidebar */}
               <div className="w-60 bg-gray-50/80 border-r border-gray-200 p-4 space-y-2 shrink-0 font-sans overflow-y-auto">
                 {[

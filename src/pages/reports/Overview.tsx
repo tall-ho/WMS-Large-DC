@@ -96,7 +96,7 @@ const KPICard = ({ title, value, subtext, icon: Icon, color }: any) => (
 
 export default function Overview() {
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
       <div className="px-8 py-6 bg-[#58594D] text-white flex justify-between items-center shadow-md z-10">
         <div>

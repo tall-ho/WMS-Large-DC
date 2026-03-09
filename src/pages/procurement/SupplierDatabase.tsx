@@ -148,9 +148,9 @@ export default function SupplierDatabase() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
-      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-[#F9F8F4]/50 backdrop-blur-sm">
+      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-transparent">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#8C6F36] text-white shadow-lg flex-shrink-0 border border-white/20">
             <Truck size={28} />
@@ -189,11 +189,11 @@ export default function SupplierDatabase() {
           </div>
 
           {/* Content Area */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
+          <div className="bg-white/80  rounded-none shadow-sm border border-white/60 flex flex-col overflow-hidden min-h-[600px] mx-8 mb-8">
             
             {/* Toolbar */}
             {activeTab === 'list' && (
-              <div className="px-6 py-4 border-b border-gray-100/50 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4 bg-white/40 backdrop-blur-sm">
+              <div className="px-6 py-4 border-b border-gray-100/50 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4 bg-white/40 ">
                 <div className="flex flex-col md:flex-row items-center gap-4 w-full lg:flex-1 lg:min-w-0 mr-auto flex-wrap">
                   <div className="relative w-full md:w-64 flex-shrink-0">
                     <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -202,7 +202,7 @@ export default function SupplierDatabase() {
                       value={searchQuery} 
                       onChange={(e) => setSearchQuery(e.target.value)} 
                       placeholder="Search Supplier..." 
-                      className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60 backdrop-blur-sm transition-colors font-mono" 
+                      className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60  transition-colors font-mono" 
                     />
                   </div>
                   <div className="flex items-center gap-2">
@@ -233,7 +233,7 @@ export default function SupplierDatabase() {
             {activeTab === 'list' && (
               <div className="flex-1 overflow-auto custom-scrollbar">
                 <table className="w-full text-left whitespace-nowrap">
-                  <thead className="sticky top-0 z-10 bg-gray-50/90 backdrop-blur-sm">
+                  <thead className="sticky top-0 z-10 bg-gray-50/90 ">
                     <tr>
                       <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-gray-100">Code</th>
                       <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-gray-100">Name</th>
@@ -294,7 +294,7 @@ export default function SupplierDatabase() {
 
             {/* Pagination */}
             {activeTab === 'list' && (
-              <div className="px-6 py-4 border-t border-gray-100/50 flex justify-between items-center bg-white/40 backdrop-blur-sm shrink-0">
+              <div className="px-6 py-4 border-t border-gray-100/50 flex justify-between items-center bg-white/40  shrink-0">
                 <div className="text-xs text-slate-500 font-bold font-mono">
                   Showing {paginatedSuppliers.length} of {filteredSuppliers.length} entries
                 </div>
@@ -329,7 +329,7 @@ export default function SupplierDatabase() {
           <button onClick={() => setShowModal(false)} className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-slate-900 transition-all"><X size={20} /></button>
         </div>
 
-        <div className="flex-1 flex overflow-hidden bg-[#F9F8F4]">
+        <div className="flex-1 flex overflow-hidden bg-transparent">
           {/* Sidebar */}
           <div className="w-60 bg-gray-50/80 border-r border-gray-200 p-4 space-y-2 shrink-0 font-sans overflow-y-auto">
             {['General Info', 'Address', 'Financial', 'Contact Person'].map(tab => (

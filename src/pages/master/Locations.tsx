@@ -146,9 +146,9 @@ export default function LocationsPage() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#F9F8F4]">
+    <div className="flex flex-col h-full bg-transparent">
       {/* Header */}
-      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-[#F9F8F4]/50 backdrop-blur-sm">
+      <div className="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-6 flex-shrink-0 z-10 bg-transparent">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#8C6F36] text-white shadow-lg flex-shrink-0 border border-white/20">
             <MapPin size={28} />
@@ -187,9 +187,9 @@ export default function LocationsPage() {
           </div>
 
           {/* Toolbar */}
-          <div className="mx-8 px-6 py-3 border-b border-gray-100/50 flex flex-col lg:flex-row items-center justify-between gap-3 bg-white/40 backdrop-blur-sm rounded-t-xl border border-white/60 shadow-sm">
+          <div className="mx-8 px-6 py-3 border-b border-gray-100/50 flex flex-col lg:flex-row items-center justify-between gap-3 bg-white/40  rounded-t-xl border border-white/60 shadow-sm">
             <div className="flex flex-1 items-center gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar">
-              <div className="flex items-center gap-1 p-1 bg-gray-100/60 rounded-lg border border-white/50 backdrop-blur-sm shrink-0">
+              <div className="flex items-center gap-1 p-1 bg-gray-100/60 rounded-lg border border-white/50  shrink-0">
                 {['All', 'Ambient', 'Chill', 'Frozen'].map((type) => (
                   <button key={type} onClick={() => setFilterType(type as any)} 
                     className={`flex items-center gap-1.5 capitalize font-mono px-2.5 py-1.5 text-xs rounded-md transition-all ${filterType === type ? 'bg-slate-500 text-white shadow-sm' : 'text-slate-500 hover:bg-white'}`}>
@@ -202,7 +202,7 @@ export default function LocationsPage() {
 
               <div className="relative w-full lg:w-64 shrink-0">
                 <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search Location..." className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60 backdrop-blur-sm transition-colors font-mono" />
+                <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search Location..." className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-gray-200/60 focus:outline-none focus:border-[#D4AF37] bg-white/60  transition-colors font-mono" />
               </div>
             </div>
             <div className="flex gap-3 shrink-0 flex-nowrap items-center ml-auto">
@@ -213,7 +213,7 @@ export default function LocationsPage() {
           </div>
 
           {/* Content Area */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-b-xl shadow-sm border border-white/60 border-t-0 flex flex-col overflow-hidden min-h-[500px] p-6 mx-8 mb-8">
+          <div className="bg-white/80  rounded-b-xl shadow-sm border border-white/60 border-t-0 flex flex-col overflow-hidden min-h-[500px] p-6 mx-8 mb-8">
             
             {viewMode === 'grid' ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -340,7 +340,7 @@ export default function LocationsPage() {
           <button onClick={() => setShowModal(false)} className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-slate-900 transition-all"><X size={20} /></button>
         </div>
         
-        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-[#F9F8F4] font-sans space-y-6">
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-8 bg-transparent font-sans space-y-6">
           {/* Type Selection */}
           <div>
             <label className="block text-[10px] font-bold text-slate-500 uppercase mb-2 font-mono">Storage Type <span className="text-red-500">*</span></label>

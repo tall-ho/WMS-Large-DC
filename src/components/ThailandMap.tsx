@@ -118,7 +118,7 @@ export default function ThailandMap({ data, className }: ThailandMapProps) {
               {/* Tooltip-like overlay on hover */}
               {isHovered && regionData && (
                 <foreignObject x={region.labelX - 60} y={region.labelY - 40} width="120" height="50">
-                  <div className="bg-gray-900/90 text-white text-xs p-2 rounded-lg text-center shadow-lg backdrop-blur-sm border border-white/10">
+                  <div className="bg-gray-900/90 text-white text-xs p-2 rounded-lg text-center shadow-lg  border border-white/10">
                     <div className="font-bold">{region.name}</div>
                     <div className="text-orange-300 font-mono">฿{(regionData.sales / 1000).toFixed(1)}k</div>
                   </div>
@@ -130,7 +130,7 @@ export default function ThailandMap({ data, className }: ThailandMapProps) {
       </svg>
       
       {/* Legend */}
-      <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-xl border border-gray-100 shadow-sm text-xs">
+      <div className="absolute bottom-4 right-4 bg-white/90  p-3 rounded-xl border border-gray-100 shadow-sm text-xs">
         <div className="font-bold text-gray-600 mb-2 uppercase tracking-wider">Sales Volume</div>
         <div className="flex items-center gap-2">
           <div className="w-20 h-2 rounded-full bg-gradient-to-r from-orange-100 to-orange-600"></div>
