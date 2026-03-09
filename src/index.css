@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'JetBrains Mono', 'Noto Sans Thai', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Noto Sans Thai', monospace;
+  --bg-main: #F5F5F0;
+  --bg-sidebar: #1A1B26;
+  --accent-orange: #FF5722;
+  --accent-purple: #8E44AD;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

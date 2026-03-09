@@ -1,11 +1,24 @@
-<div align="center">
+# SaaS WMS Platform
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+A Multi-tenant Warehouse Management System built with Next.js and Google Sheets.
 
-  <h1>Built with AI Studio</h2>
+## Features
+-   **Dashboard**: Real-time overview of inventory and orders.
+-   **Product Management**: CRUD operations for SKUs.
+-   **Inventory Control**: Track stock levels across warehouses.
+-   **Order Management**: View and process orders.
+-   **Google Sheets Backend**: Zero-cost database for MVP.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Getting Started
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+1.  Read `DEPLOYMENT.md` to set up Google Sheets credentials.
+2.  Run `npm install`.
+3.  Run `npm run dev`.
+4.  Open `http://localhost:3000`.
 
-</div>
+## Tech Stack
+-   **Framework**: Next.js 14 (App Router)
+-   **Styling**: Tailwind CSS
+-   **Database**: Google Sheets (via `google-spreadsheet`)
+-   **Auth**: JWT
+-   **Deployment**: Vercel
